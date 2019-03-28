@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,54 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Rounded" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPw-HG-Ejc">
+                                <rect key="frame" x="62.5" y="70" width="250" height="200"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="6Du-2k-oxu">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="200"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4941176471" green="0.82745098039999998" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6Du-2k-oxu" firstAttribute="leading" secondItem="KPw-HG-Ejc" secondAttribute="leading" id="GmD-57-x2S"/>
+                                    <constraint firstAttribute="width" constant="250" id="VG4-Yc-wdn"/>
+                                    <constraint firstAttribute="height" constant="200" id="l19-CQ-HGY"/>
+                                    <constraint firstItem="6Du-2k-oxu" firstAttribute="height" secondItem="KPw-HG-Ejc" secondAttribute="height" id="rs0-f3-2fV"/>
+                                    <constraint firstItem="6Du-2k-oxu" firstAttribute="width" secondItem="KPw-HG-Ejc" secondAttribute="width" id="tG2-zZ-1Qd"/>
+                                    <constraint firstItem="6Du-2k-oxu" firstAttribute="top" secondItem="KPw-HG-Ejc" secondAttribute="top" id="zCA-lG-QZp"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bike" translatesAutoresizingMaskIntoConstraints="NO" id="IvO-0O-h1O">
+                                <rect key="frame" x="62.5" y="330" width="250" height="200"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="IvO-0O-h1O" firstAttribute="centerX" secondItem="6Du-2k-oxu" secondAttribute="centerX" id="APB-j2-1ek"/>
+                            <constraint firstItem="KPw-HG-Ejc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Ryw-Lu-m5Z"/>
+                            <constraint firstItem="IvO-0O-h1O" firstAttribute="height" secondItem="6Du-2k-oxu" secondAttribute="height" id="dNk-49-THW"/>
+                            <constraint firstItem="IvO-0O-h1O" firstAttribute="top" secondItem="6Du-2k-oxu" secondAttribute="bottom" constant="60" id="dX9-8T-kYi"/>
+                            <constraint firstItem="KPw-HG-Ejc" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lTb-EN-h7h"/>
+                            <constraint firstItem="IvO-0O-h1O" firstAttribute="width" secondItem="6Du-2k-oxu" secondAttribute="width" id="noK-tx-1bs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="dynamicImageView" destination="IvO-0O-h1O" id="4DL-Gq-EZE"/>
+                        <outlet property="staticImageView" destination="6Du-2k-oxu" id="LMp-Zr-8Rb"/>
+                        <outlet property="staticUnderview" destination="KPw-HG-Ejc" id="hgd-b4-Q4s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="bike" width="750" height="599"/>
+    </resources>
 </document>
