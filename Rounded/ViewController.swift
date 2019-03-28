@@ -20,8 +20,8 @@ class ViewController: UIViewController {
 
     func setDropShadowsOnDynamicView() {
         guard let dynamicImageView = self.dynamicImageView,
-              self.dynamicUnderview == nil
-                else { return }
+            self.dynamicUnderview == nil
+            else { return }
 
         dynamicUnderview = attachUnderview(to: dynamicImageView)
 
@@ -36,8 +36,8 @@ class ViewController: UIViewController {
 
     func attachUnderview(to view: UIView?) -> UIView? {
         guard let view = view,
-              let superview = view.superview
-                else { return nil }
+            let superview = view.superview
+            else { return nil }
 
         let underView = UIView(frame: view.frame)
         // TODO make constraints work
@@ -61,8 +61,8 @@ class ViewController: UIViewController {
 
         let layer = view.layer
         layer.shadowPath =
-                UIBezierPath(roundedRect: view.bounds,
-                        cornerRadius: layer.cornerRadius).cgPath
+            UIBezierPath(roundedRect: view.bounds,
+                         cornerRadius: layer.cornerRadius).cgPath
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.5
         layer.shadowOffset = CGSize(width: 10, height: 10)
