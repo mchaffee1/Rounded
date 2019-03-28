@@ -1,6 +1,7 @@
 import UIKit
 
 class DemoViewController: UIViewController {
+
     private let defaultRadius: CGFloat = 16.0
 
     @IBOutlet weak var staticImageView: UIImageView?
@@ -15,7 +16,7 @@ class DemoViewController: UIViewController {
     }
 
     func setDropShadowsOnStaticView() {
-        setCornerRadiusAndDropShadow(radius: self.defaultRadius, view: staticImageView, underview: staticUnderview)
+        setCornerRadiusAndDropShadow(radius: defaultRadius, view: staticImageView, underview: staticUnderview)
     }
 
     func setDropShadowsOnDynamicView() {
