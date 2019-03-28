@@ -7,7 +7,7 @@ class DemoViewController: UIViewController {
     @IBOutlet weak var staticUnderview: UIView?
 
     @IBOutlet weak var dynamicImageView: UIImageView?
-    private var dynamicUnderview: UIView?
+    private weak var dynamicUnderview: UIView?
 
     override func viewDidLayoutSubviews() {
         setDropShadowsOnStaticView()
