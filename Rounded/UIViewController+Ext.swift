@@ -1,34 +1,7 @@
 import UIKit
 
-class ViewController: UIViewController {
-    private let defaultRadius: CGFloat = 16.0
-
-    @IBOutlet weak var staticImageView: UIImageView?
-    @IBOutlet weak var staticUnderview: UIView?
-
-    @IBOutlet weak var dynamicImageView: UIImageView?
-    private var dynamicUnderview: UIView?
-
-    override func viewDidLayoutSubviews() {
-        setDropShadowsOnStaticView()
-        setDropShadowsOnDynamicView()
-    }
-
-    func setDropShadowsOnStaticView() {
-        setCornerRadiusAndDropShadow(radius: self.defaultRadius, view: staticImageView, underview: staticUnderview)
-    }
-
-    func setDropShadowsOnDynamicView() {
-        guard let dynamicImageView = self.dynamicImageView,
-            self.dynamicUnderview == nil
-            else { return }
-
-        dynamicUnderview = attachUnderview(to: dynamicImageView)
-
-        setCornerRadiusAndDropShadow(radius: defaultRadius, view: dynamicImageView, underview: dynamicUnderview)
-    }
-
-    private func setCornerRadiusAndDropShadow(radius: CGFloat, view: UIImageView?, underview: UIView?) {
+extension UIViewController {
+    func setCornerRadiusAndDropShadow(radius: CGFloat, view: UIImageView?, underview: UIView?) {
         setCornerRadius(of: radius, on: view)
         setCornerRadius(of: radius, on: underview, clipping: false)
         addDropShadow(to: underview)
@@ -40,7 +13,7 @@ class ViewController: UIViewController {
             else { return nil }
 
         let underView = UIView(frame: view.frame)
-        // TODO make constraints work
+        // TODO make constraints work 🙈
         underView.translatesAutoresizingMaskIntoConstraints = false
 
         superview.insertSubview(underView, belowSubview: view)
